@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <div class="contenidoEncabezado">
+            <p class="logo">SHOP API</p>
+            <h1 class="tituloPagina">Catálogo de productos</h1>
+            <p class="subtituloPagina">Selecciona un producto para consultar su información.</p>
+        </div>
+    </header>
+
+    <main class="contenedorPrincipal">
+        <div class="barraSuperior">
+            <h2 class="tituloSeccion">Productos disponibles</h2>
+            <input type="text" id="buscador" class="buscador" placeholder="Buscar producto...">
+        </div>
+
+        <section id="contenedorProductos" class="contenedorProductos">
+            <p class="mensajeVacio">Cargando productos...</p>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/apiproductos.js"></script>
+    <script>
+        if (typeof extraerProductos === 'function' && typeof crearElemento === 'function') {
+            extraerProductos()
+        } else {
+            document.getElementById('contenedorProductos').innerHTML =
+                '<p class="mensajeVacio">No se pudieron cargar los archivos JavaScript. Verifica que la carpeta js esté junto al index.html.</p>'
+        }
+    </script>
+
+</body>
+</html>

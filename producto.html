@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del producto</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <div class="contenidoEncabezado">
+            <p class="logo">SHOP API</p>
+            <h1 class="tituloPagina">Detalle del producto</h1>
+        </div>
+    </header>
+
+    <main class="contenedorPrincipal paginaDetalle">
+        <a href="index.html" class="enlaceVolver">&#8592; Volver al catálogo</a>
+
+        <section id="contenedorDetalle" class="contenedorDetalle"></section>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/apiproductos.js"></script>
+    <script>
+        if (typeof extraerProductoDetalle === 'function' && typeof crearElemento === 'function') {
+            extraerProductoDetalle()
+        } else {
+            let contenedorDetalle = document.getElementById('contenedorDetalle')
+            contenedorDetalle.classList.add('detalleError')
+            contenedorDetalle.innerHTML =
+                '<p class="mensajeError">No se pudieron cargar los archivos JavaScript. Verifica que la carpeta js esté junto a producto.html.</p>'
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,382 @@
+/* =========================================================
+   Catálogo de Productos - Taller #4
+   Paleta tomada de las imágenes de referencia
+   ========================================================= */
+
+:root {
+    --fondo: #F5F6F8;
+    --oscuro: #17202A;
+    --texto: #20242A;
+    --textoSuave: #626567;
+    --textoEtiqueta: #717D7E;
+    --dorado: #F4B942;
+    --doradoOscuro: #A66B00;
+    --borde: #CCD1D1;
+    --blanco: #FFFFFF;
+    --grisImagen: #F0F2F3;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ------------------ Encabezado ------------------ */
+
+.encabezado {
+    background-color: var(--oscuro);
+    color: var(--blanco);
+}
+
+.contenidoEncabezado {
+    width: min(1610px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 42px 0 41px;
+}
+
+.logo {
+    color: var(--dorado);
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.tituloPagina {
+    color: var(--blanco);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 4px;
+}
+
+.subtituloPagina {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 0;
+}
+
+/* ------------------ Contenedor principal ------------------ */
+
+.contenedorPrincipal {
+    width: min(1148px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 44px 0 60px;
+}
+
+.barraSuperior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.tituloSeccion {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--texto);
+}
+
+.buscador {
+    width: 320px;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    background-color: var(--blanco);
+    color: var(--texto);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+.buscador::placeholder {
+    color: #757575;
+}
+
+.buscador:focus {
+    border-color: var(--oscuro);
+}
+
+/* ------------------ Catálogo ------------------ */
+
+.contenedorProductos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px 24px;
+}
+
+.tarjetaProducto {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blanco);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(23, 32, 42, 0.08);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tarjetaProducto:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(23, 32, 42, 0.12);
+}
+
+.tarjetaImagen {
+    height: 210px;
+    padding: 20px;
+    background-color: var(--grisImagen);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjetaImagen img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.tarjetaCuerpo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 22px 18px 31px;
+}
+
+.categoria {
+    color: var(--textoEtiqueta);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nombreProducto {
+    color: var(--texto);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    min-height: 45px;
+    margin-top: 22px;
+}
+
+.filaPrecio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.precio {
+    color: var(--texto);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.calificacion {
+    color: var(--doradoOscuro);
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.stock {
+    color: var(--textoSuave);
+    font-size: 13px;
+    margin-top: 17px;
+}
+
+.botonProducto {
+    width: 100%;
+    height: 38px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--oscuro);
+    color: var(--blanco);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.botonProducto:hover {
+    background-color: #253240;
+}
+
+/* ------------------ Detalle del producto ------------------ */
+
+.paginaDetalle {
+    padding-top: 32px;
+}
+
+.enlaceVolver {
+    display: inline-block;
+    color: var(--oscuro);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 22px;
+}
+
+.enlaceVolver:hover {
+    text-decoration: underline;
+}
+
+.contenedorDetalle {
+    display: flex;
+    min-height: 500px;
+    background-color: var(--blanco);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(23, 32, 42, 0.08);
+}
+
+.detalleImagen {
+    width: 45%;
+    padding: 40px;
+    background-color: var(--grisImagen);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detalleImagen img {
+    max-width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+}
+
+.detalleInfo {
+    width: 55%;
+    padding: 44px;
+}
+
+.detalleNombre {
+    color: var(--texto);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-top: 8px;
+}
+
+.detallePrecio {
+    color: var(--texto);
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 14px;
+}
+
+.detalleDescripcion {
+    color: var(--textoSuave);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 16px;
+}
+
+.datosProducto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px 44px;
+    margin-top: 30px;
+}
+
+.datoEtiqueta {
+    color: var(--textoEtiqueta);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.datoValor {
+    color: var(--texto);
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.valorCalificacion {
+    color: var(--doradoOscuro);
+}
+
+/* ------------------ Mensajes ------------------ */
+
+.mensajeVacio,
+.mensajeError {
+    color: var(--textoSuave);
+    font-size: 15px;
+}
+
+.mensajeVacio {
+    grid-column: 1 / -1;
+    padding: 40px 0;
+}
+
+.detalleError {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 30px;
+}
+
+/* ------------------ Responsive ------------------ */
+
+@media (max-width: 980px) {
+    .contenedorProductos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contenedorDetalle {
+        flex-direction: column;
+    }
+
+    .detalleImagen,
+    .detalleInfo {
+        width: 100%;
+    }
+
+    .detalleImagen {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contenedorProductos {
+        grid-template-columns: 1fr;
+    }
+
+    .barraSuperior {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .buscador {
+        width: 100%;
+    }
+
+    .contenidoEncabezado {
+        padding: 26px 0 24px;
+    }
+
+    .tituloPagina {
+        font-size: 24px;
+    }
+
+    .detalleInfo {
+        padding: 26px;
+    }
+
+    .datosProducto {
+        grid-template-columns: 1fr;
+    }
+}
